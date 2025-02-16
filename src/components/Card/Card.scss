@@ -5,34 +5,77 @@
   .product-card {
     position: relative;
     padding: 15px;
+    background-color: white;
     border-radius: 12px;
-    box-shadow: 0px 0px 5px gray;
     transition: all 0.3s ease;
     &:hover {
       transform: scale(1.03);
     }
-    .product-image {
-      width: 100%;
-      margin-bottom: 10px;
+    .card-imgs {
+      position: relative;
+      .product-image {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .like-btn {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+      }
+    }
+    .product-rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(128, 128, 128, 0.597);
+      }
     }
     .card-content {
-      border-top: 1px solid gray;
       padding-top: 10px;
       h3 {
+        height: 47px;
         margin-bottom: 10px;
+        &:hover {
+          color: #008dff;
+        }
       }
       margin-bottom: 10px;
     }
-    .buy-btn {
-      display: block;
-      width: 100%;
-      padding: 12px 0;
-      border-radius: 15px;
-      border: none;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      background-color: darkblue;
-      color: white;
+    .price-p {
+      color: #008dff;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .card-credit {
+      border: 1px solid darkorange;
+      padding: 8px;
+      color: darkorange;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+    .card-btns {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .buy-btn {
+        display: block;
+        width: 85%;
+        padding: 12px 0;
+        border-radius: 15px;
+        border: none;
+        letter-spacing: 0.5px;
+        background-color: #008dff;
+        color: white;
+      }
+      .btn2 {
+        width: 15%;
+        background-color: #20c997;
+      }
     }
   }
 }

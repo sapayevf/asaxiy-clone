@@ -8,9 +8,6 @@
 
 body {
   font-family: "Inter", serif;
+  background-color: #f4f7fd;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../API/api";
 import Card from "../Card/Card";
 import "./Products.scss";
 import Skeleton from "@mui/material/Skeleton";
 import { Grid, Box } from "@mui/material";
+import logo from "../../assets/asaxiy-logo.svg";
+import { IoMenu } from "react-icons/io5";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -14,12 +16,12 @@ function Products() {
   const [count, setCount] = useState(1);
   const [dataLength, setDataLength] = useState(0);
 
-  const limit = 30;
+  const limit = 1;
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get("https://dummyjson.com/products", {
+    api
+      .get("/products", {
         params: {
           limit: limit * count,
         },
@@ -38,38 +40,40 @@ function Products() {
       product.title.toLowerCase().includes(search.toLowerCase())
     )
     .sort((a, b) => {
-      if (sortPrice === "asc") 
-        return a.price - b.price;
-      if (sortPrice === "desc") 
-        return b.price - a.price;
+      if (sortPrice === "asc") return a.price - b.price;
+      if (sortPrice === "desc") return b.price - a.price;
       return 0;
     })
     .sort((a, b) => {
-      if (sortRating === "asc") 
-        return a.rating - b.rating;
-      if (sortRating === "desc") 
-        return b.rating - a.rating;
+      if (sortRating === "asc") return a.rating - b.rating;
+      if (sortRating === "desc") return b.rating - a.rating;
       return 0;
     });
 
   return (
     <div className="container">
       <div className="header">
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <img src={logo} alt="" />
+        <button className="btn btn3"> <IoMenu size={20} color="white" /> Bo'limlar</button>
+        <div className="input-header">
+          <input
+            type="text"
+            placeholder="Qidirish..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button className="btn">Qidirish</button>
+        </div>
+
         <select onChange={(e) => setSortPrice(e.target.value)}>
-          <option value="">Sort by Price</option>
-          <option value="asc">Low to High</option>
-          <option value="desc">High to Low</option>
+          <option value="">Narx bo'yicha saralash</option>
+          <option value="asc">Arzondan Qimmatga</option>
+          <option value="desc">Qimmatdan Arzonga</option>
         </select>
         <select onChange={(e) => setSortRating(e.target.value)}>
-          <option value="">Sort by Rating</option>
-          <option value="asc">Low to High</option>
-          <option value="desc">High to Low</option>
+          <option value="">Reyting bo'yicha saralash</option>
+          <option value="asc">Pastdan Tepaga</option>
+          <option value="desc">Tepadan Pastga</option>
         </select>
       </div>
 

@@ -1,0 +1,24 @@
+footer {
+  background-color: #fff;
+  padding: 40px 0;
+  p {
+    color: gray;
+    &:hover {
+      color: #008dff;
+    }
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .div1 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .dokon {
+      padding: 20px 14px;
+      background-color: #efe8e8;
+      border-radius: 12px;
+    }
+  }
+}
