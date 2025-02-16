@@ -4,8 +4,6 @@ import Card from "../Card/Card";
 import "./Products.scss";
 import Skeleton from "@mui/material/Skeleton";
 import { Grid, Box } from "@mui/material";
-import logo from "../../assets/asaxiy-logo.svg";
-import { IoMenu } from "react-icons/io5";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -16,7 +14,7 @@ function Products() {
   const [count, setCount] = useState(1);
   const [dataLength, setDataLength] = useState(0);
 
-  const limit = 1;
+  const limit = 20;
 
   useEffect(() => {
     setLoading(true);
@@ -52,31 +50,6 @@ function Products() {
 
   return (
     <div className="container">
-      <div className="header">
-        <img src={logo} alt="" />
-        <button className="btn btn3"> <IoMenu size={20} color="white" /> Bo'limlar</button>
-        <div className="input-header">
-          <input
-            type="text"
-            placeholder="Qidirish..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <button className="btn">Qidirish</button>
-        </div>
-
-        <select onChange={(e) => setSortPrice(e.target.value)}>
-          <option value="">Narx bo'yicha saralash</option>
-          <option value="asc">Arzondan Qimmatga</option>
-          <option value="desc">Qimmatdan Arzonga</option>
-        </select>
-        <select onChange={(e) => setSortRating(e.target.value)}>
-          <option value="">Reyting bo'yicha saralash</option>
-          <option value="asc">Pastdan Tepaga</option>
-          <option value="desc">Tepadan Pastga</option>
-        </select>
-      </div>
-
       {loading ? (
         <Grid container spacing={2} sx={{ width: "100%", mt: 2 }}>
           {Array.from({ length: 9 }).map((_, index) => (

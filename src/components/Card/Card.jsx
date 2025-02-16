@@ -1,29 +1,20 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Card.scss";
 import { Rating } from "@mui/material";
 import { BsFillBasket3Fill } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa";
 
 function Card({ product }) {
-  const [liked, setLiked] = useState(false); // Like bosilgan yoki yo'qligini saqlaydi
-
-  const productPrice = Math.floor((product.price * 12800) / 1000) * 1000;
-  const som = productPrice.toLocaleString("ru-RU").replace(",", " ");
-
   return (
     <div className="product-card">
       <div className="card-imgs">
-        <FaHeart
-          className="like-btn"
-          size={24}
-          color={liked ? "red" : "gray"} // Bosilganda qizil bo‘ladi
-          onClick={() => setLiked(!liked)} // Bosilganda o'zgaradi
-        />
-        <img className="product-image" src={product.thumbnail} alt="" />
+        <FaHeart className="like-btn" size={24} color="gray" />
+        <Link to={`/product/${product.id}`}>
+          <img className="product-image" src={product.thumbnail} alt="" />
+        </Link>
       </div>
       <div className="card-content">
         <h3>{product.title}</h3>
-
         <div className="product-rating">
           <Rating
             size="small"
@@ -32,14 +23,9 @@ function Card({ product }) {
           />
           <p>{product.minimumOrderQuantity} ta sharh</p>
         </div>
-        <br />
-        <div>
-          <p className="price-p">{som} so'm</p>
-        </div>
-        <div className="card-credit">
-          {Math.round(productPrice / 12)} so'm x 12 oy
-        </div>
-        <br />
+        <p className="price-p">
+          {Math.floor((product.price * 12800) / 1000) * 1000} so'm
+        </p>
       </div>
       <div className="card-btns">
         <button className="buy-btn">Hoziroq xarid qilish</button>
