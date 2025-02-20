@@ -207,3 +207,52 @@
     border-radius: 10px;
   }
 }
+
+.login {
+  position: relative;
+  .login-h1 {
+    padding-bottom: 15px;
+    border-bottom: 1px gray solid;
+    margin-bottom: 20px;
+  }
+  .modalcontent {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    img {
+      width: 54%;
+    }
+  }
+  .modal-price {
+    font-size: 14px;
+    color: #0056b3;
+    font-weight: 600;
+  }
+  .login-p {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .socials {
+    display: block;
+    margin: 0 auto;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
+}

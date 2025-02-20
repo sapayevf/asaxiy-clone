@@ -7,8 +7,6 @@ import { FaHeart } from "react-icons/fa";
 function Card({ product }) {
   return (
     <>
-      
-
       <div className="product-card">
         <div className="card-imgs">
           <FaHeart className="like-btn" size={24} color="gray" />

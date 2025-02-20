@@ -3,10 +3,14 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./detail.scss";
 import { Rating } from "@mui/material";
+import ModalWrapper from "../ModalWrapper";
+import { MdClose } from "react-icons/md";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
 
   const totalAmount = 72000;
   const [months, setMonths] = useState(3);
@@ -56,9 +60,7 @@ const ProductDetail = () => {
             defaultValue={Math.round(product.rating)}
             precision={0.5}
           />
-          <p className="old-price">
-            {(product.price * 1.3).toLocaleString()} so'm{" "}
-          </p>
+
           <p className="new-price-2">
             {Math.floor((product.price * 12800) / 1000) * 1000} so'm
           </p>
@@ -73,7 +75,12 @@ const ProductDetail = () => {
           <p>{product.description}</p>
           <div className="btns">
             <button className="add-button">Savatchaga qo'shish</button>
-            <button className="buy-button">Sotib olish</button>
+            <button
+              onClick={() => setIsBuyModalOpen(true)}
+              className="buy-button"
+            >
+              Sotib olish
+            </button>
           </div>
         </div>
 
@@ -135,6 +142,35 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+
+      {isBuyModalOpen && (
+        <ModalWrapper
+          open={isBuyModalOpen}
+          onClose={() => setIsLoginModalOpen(false)}
+        >
+          <div className="login">
+            <h1 className="login-h1">Hoziroq xarid qilish</h1>
+            <div className="modalcontent">
+              <img src={product.thumbnail} alt="" />
+              <div>
+                <h3>{product.title}</h3>
+                <br />
+                <p className="modal-price">
+                  {Math.floor((product.price * 12800) / 1000) * 1000} so'm
+                </p>
+              </div>
+            </div>
+            <p className="login-p">Telefon</p>
+            <input type="text" placeholder="+998" />
+            <p className="login-p">Ism</p>
+            <input type="text" placeholder="Ismingiz..." />
+            <button className="btn">Sotib olish</button>
+            <button className="close" onClick={() => setIsBuyModalOpen(false)}>
+              <MdClose size={20} />
+            </button>
+          </div>
+        </ModalWrapper>
+      )}
     </div>
   );
 };
