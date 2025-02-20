@@ -8,9 +8,7 @@ import Carousel from "../Carousel/Carousel";
 
 function Products() {
   const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState("");
-  const [sortPrice, setSortPrice] = useState("");
-  const [sortRating, setSortRating] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(1);
   const [dataLength, setDataLength] = useState(0);
