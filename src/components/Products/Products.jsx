@@ -4,6 +4,7 @@ import Card from "../Card/Card";
 import "./Products.scss";
 import Skeleton from "@mui/material/Skeleton";
 import { Grid, Box } from "@mui/material";
+import Carousel from "../Carousel/Carousel";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -50,6 +51,9 @@ function Products() {
 
   return (
     <div className="container">
+
+    <Carousel />
+
       {loading ? (
         <Grid container spacing={2} sx={{ width: "100%", mt: 2 }}>
           {Array.from({ length: 9 }).map((_, index) => (
