@@ -6,34 +6,38 @@ import { FaHeart } from "react-icons/fa";
 
 function Card({ product }) {
   return (
-    <div className="product-card">
-      <div className="card-imgs">
-        <FaHeart className="like-btn" size={24} color="gray" />
-        <Link to={`/product/${product.id}`}>
-          <img className="product-image" src={product.thumbnail} alt="" />
-        </Link>
-      </div>
-      <div className="card-content">
-        <h3>{product.title}</h3>
-        <div className="product-rating">
-          <Rating
-            size="small"
-            defaultValue={Math.round(product.rating)}
-            precision={0.5}
-          />
-          <p>{product.minimumOrderQuantity} ta sharh</p>
+    <>
+      
+
+      <div className="product-card">
+        <div className="card-imgs">
+          <FaHeart className="like-btn" size={24} color="gray" />
+          <Link to={`/product/${product.id}`}>
+            <img className="product-image" src={product.thumbnail} alt="" />
+          </Link>
         </div>
-        <p className="price-p">
-          {Math.floor((product.price * 12800) / 1000) * 1000} so'm
-        </p>
+        <div className="card-content">
+          <h3>{product.title}</h3>
+          <div className="product-rating">
+            <Rating
+              size="small"
+              defaultValue={Math.round(product.rating)}
+              precision={0.5}
+            />
+            <p>{product.minimumOrderQuantity} ta sharh</p>
+          </div>
+          <p className="price-p">
+            {Math.floor((product.price * 12800) / 1000) * 1000} so'm
+          </p>
+        </div>
+        <div className="card-btns">
+          <button className="buy-btn">Hoziroq xarid qilish</button>
+          <button className="buy-btn btn2">
+            <BsFillBasket3Fill color="white" />
+          </button>
+        </div>
       </div>
-      <div className="card-btns">
-        <button className="buy-btn">Hoziroq xarid qilish</button>
-        <button className="buy-btn btn2">
-          <BsFillBasket3Fill color="white" />
-        </button>
-      </div>
-    </div>
+    </>
   );
 }
 

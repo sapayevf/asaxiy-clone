@@ -1,67 +1,209 @@
 .product-detail {
   display: flex;
-  gap: 30px;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+  border: blue 2px solid;
+  padding: 10px 20px;
   border-radius: 10px;
-  background: #fff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
-.product-image {
-  flex: 1;
-}
-
-.product-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.product-info {
-  flex: 1;
+.detail-info {
+  width: 400px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.img {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: gray 0px 5px 15px;
+  height: 400px;
+  width: 400px;
 }
 
-h1 {
+.detail-image {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.detail-title {
   font-size: 24px;
-  color: #333;
+  margin-bottom: 10px;
 }
 
-.description {
+.detail-price {
+  font-size: 20px;
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+.detail-description {
   font-size: 16px;
-  color: #666;
-  margin: 10px 0;
+  color: #555;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.add-button {
+  padding: 15px 20px;
+  width: 200px;
+  background-color: rgb(25, 174, 190);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.new-price-2 {
+  font-weight: 600;
+  font-size: 30px;
+  color: rgb(230, 172, 64);
+}
+
+.buy-button {
+  width: 200px;
+  padding: 15px 20px;
+  background-color: transparent;
+  border: blue 1px solid;
+  color: blue;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.installment-container {
+  width: 350px;
+  height: 350px;
+  padding: 10px;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.installment-options {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  button {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgb(169, 169, 169);
+    background: white;
+    cursor: pointer;
+    color: grey;
+
+    &.active {
+      opacity: 0.8;
+      border: blue 1px solid;
+      color: black;
+    }
+  }
+}
+
+.installment-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid #ddd;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
 }
 
 .price {
-  font-size: 20px;
-  color: #008dff;
+  color: orange;
+  font-size: 18px;
   font-weight: bold;
 }
 
-.buy-btn {
-  display: block;
-  padding: 12px 16px;
-  border-radius: 15px;
-  border: none;
-  letter-spacing: 0.5px;
-  background-color: #008dff;
+.order-btn {
+  background: orange;
   color: white;
-  margin-top: 50px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
-.buy-btn:hover {
-  background: #c0392b;
+.eee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.loading,
-.not-found {
-  text-align: center;
-  font-size: 18px;
-  color: #666;
-  margin-top: 50px;
+.summa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.three-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column;
+
+  img {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
 }
