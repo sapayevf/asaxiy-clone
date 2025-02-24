@@ -79,4 +79,26 @@
       cursor: pointer;
     }
   }
+
+  .header-btns {
+    display: flex;
+    gap: 20px;
+    .like-counter-btn {
+      border: none;
+      background-color: #fff;
+      position: relative;
+      padding: 5px;
+      cursor: pointer;
+      span {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        padding: 7px 10px;
+        background-color: #008dff;
+        font-size: 10px;
+        color: white;
+        border-radius: 50%;
+      }
+    }
+  }
 }
