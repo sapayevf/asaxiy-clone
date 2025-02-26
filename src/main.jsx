@@ -7,7 +7,9 @@ import ProductDetails from "./components/Details/ProductDetail";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import { LikeProvider } from "./context/LikeContext";
-import LikedCards from "./components/LikedCard/LikedCard"; 
+import { CartProvider } from "./context/CartContext";
+import LikedCards from "./components/LikedCard/LikedCard";
+import BuyCard from "./components/BuyCard/BuyCard";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -15,15 +17,18 @@ function App() {
   return (
     <StrictMode>
       <LikeProvider>
-        <Router>
-          <Header search={search} setSearch={setSearch} />
-          <Routes>
-            <Route path="/" element={<Products search={search} />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/liked-cards" element={<LikedCards />} />
-          </Routes>
-          <Footer />
-        </Router>
+        <CartProvider>
+          <Router>
+            <Header search={search} setSearch={setSearch} />
+            <Routes>
+              <Route path="/" element={<Products search={search} />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/liked-cards" element={<LikedCards />} />
+              <Route path="/cart" element={<BuyCard />} />
+            </Routes>
+            <Footer />
+          </Router>
+        </CartProvider>
       </LikeProvider>
     </StrictMode>
   );

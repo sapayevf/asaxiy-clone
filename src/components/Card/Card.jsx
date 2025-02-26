@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Rating } from "@mui/material";
 import { BsFillBasket3Fill } from "react-icons/bs";
 import { FaHeart, FaHeartBroken } from "react-icons/fa";
 import { memo, useMemo } from "react";
 import { useLike } from "../../context/LikeContext";
+import { useCart } from "../../context/CartContext";
 import "./Card.scss";
 
 const Card = memo(({ product, isLikedPage = false }) => {
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+
   const formattedPrice = useMemo(() => {
     return Math.floor((product.price * 12800) / 1000) * 1000;
   }, [product.price]);
@@ -47,7 +51,7 @@ const Card = memo(({ product, isLikedPage = false }) => {
       </div>
       <div className="card-btns">
         <button className="buy-btn">Hoziroq xarid qilish</button>
-        <button className="buy-btn btn2">
+        <button onClick={() => addToCart(product)} className="buy-btn btn2">
           <BsFillBasket3Fill color="white" />
         </button>
       </div>

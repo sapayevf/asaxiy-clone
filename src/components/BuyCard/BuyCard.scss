@@ -1,0 +1,46 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  .card-2 {
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .card-2-title {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      img {
+        width: 200px;
+        border-radius: 20px;
+      }
+    }
+  }
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .count {
+        border: 1px solid blue;
+        border-radius: 50%;
+        padding: 10px 14px;
+        font-size: 16px;
+      }
+    }
+    .remove-btn {
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+    }
+  }
+}
