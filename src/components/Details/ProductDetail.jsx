@@ -146,7 +146,7 @@ const ProductDetail = () => {
       {isBuyModalOpen && (
         <ModalWrapper
           open={isBuyModalOpen}
-          onClose={() => setIsLoginModalOpen(false)}
+          onClose={() => setIsBuyModalOpen(false)}
         >
           <div className="login">
             <h1 className="login-h1">Hoziroq xarid qilish</h1>

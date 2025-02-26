@@ -3,6 +3,9 @@ import { useCart } from "../../context/CartContext";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 import "./BuyCard.scss";
+import { MdClose } from "react-icons/md";
+import { useState } from "react";
+import ModalWrapper from "../ModalWrapper";
 
 const Cart = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
@@ -13,6 +16,8 @@ const Cart = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
 
   return (
     <div className="container">
@@ -65,6 +70,10 @@ const Cart = () => {
           <h3>
             Umumiy narx: {Math.floor((totalPrice * 12800) / 1000) * 1000} so'm
           </h3>
+          <br />
+          <button className="home-btn" onClick={() => setIsBuyModalOpen(true)}>
+            Sotib olish
+          </button>
         </>
       )}
       <br />
@@ -72,6 +81,28 @@ const Cart = () => {
       <button className="home-btn" onClick={() => navigate("/")}>
         Bosh sahifaga qaytish
       </button>
+
+      {isBuyModalOpen && (
+        <ModalWrapper
+          open={isBuyModalOpen}
+          onClose={() => setIsLoginModalOpen(false)}
+        >
+          <div className="login">
+            <h1 className="login-h1">Hoziroq xarid qilish</h1>
+            <h3>
+              Umumiy narx: {Math.floor((totalPrice * 12800) / 1000) * 1000} so'm
+            </h3>
+            <p className="login-p">Telefon</p>
+            <input type="text" placeholder="+998" />
+            <p className="login-p">Ism</p>
+            <input type="text" placeholder="Ismingiz..." />
+            <button className="btn">Sotib olish</button>
+            <button className="close" onClick={() => setIsBuyModalOpen(false)}>
+              <MdClose size={20} />
+            </button>
+          </div>
+        </ModalWrapper>
+      )}
     </div>
   );
 };
