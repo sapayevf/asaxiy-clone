@@ -10,6 +10,7 @@ import { LikeProvider } from "./context/LikeContext";
 import { CartProvider } from "./context/CartContext";
 import LikedCards from "./components/LikedCard/LikedCard";
 import BuyCard from "./components/BuyCard/BuyCard";
+import Order from "./components/Order/Order";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -25,6 +26,7 @@ function App() {
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/liked-cards" element={<LikedCards />} />
               <Route path="/cart" element={<BuyCard />} />
+              <Route path="/order" element={<Order />} />
             </Routes>
             <Footer />
           </Router>
