@@ -27,8 +27,20 @@ function LanguageDropdown() {
     <FormControl className="form-control" variant="outlined" size="small">
       <InputLabel>Tilni tanlang</InputLabel>
       <Select value={language} onChange={handleChange} label="Tilni tanlang">
-        <MenuItem value="uz">O‘zbekcha</MenuItem>
-        <MenuItem value="ru">Русский</MenuItem>
+        <MenuItem value="uz">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1280px-Flag_of_Uzbekistan.svg.png"
+            alt=""
+            width={20}
+          />
+        </MenuItem>
+        <MenuItem value="ru">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/2560px-Flag_of_Russia.svg.png"
+            alt=""
+            width={20}
+          />
+        </MenuItem>
       </Select>
     </FormControl>
   );
