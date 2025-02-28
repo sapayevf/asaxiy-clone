@@ -6,10 +6,13 @@ import { memo, useMemo } from "react";
 import { useLike } from "../../context/LikeContext";
 import { useCart } from "../../context/CartContext";
 import "./Card.scss";
+import { useTranslation } from "react-i18next";
 
 const Card = memo(({ product, isLikedPage = false }) => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+
+  const { t } = useTranslation();
 
   const formattedPrice = useMemo(() => {
     return Math.floor((product.price * 12800) / 1000) * 1000;
@@ -50,7 +53,7 @@ const Card = memo(({ product, isLikedPage = false }) => {
         <p className="price-p">{formattedPrice} so'm</p>
       </div>
       <div className="card-btns">
-        <button className="buy-btn">Hoziroq xarid qilish</button>
+        <button className="buy-btn">{t("sotibolish")}</button>
         <button onClick={() => addToCart(product)} className="buy-btn btn2">
           <BsFillBasket3Fill color="white" />
         </button>

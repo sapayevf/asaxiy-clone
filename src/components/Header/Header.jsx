@@ -10,6 +10,29 @@ import { MdClose } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { useCart } from "../../context/CartContext";
 import { SlBasketLoaded } from "react-icons/sl";
+import { useTranslation } from "react-i18next";
+import { MenuItem, Select, FormControl, InputLabel } from "@mui/material";
+
+function LanguageDropdown() {
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState(i18n.language || "uz");
+
+  const handleChange = (event) => {
+    const selectedLang = event.target.value;
+    setLanguage(selectedLang);
+    i18n.changeLanguage(selectedLang);
+  };
+
+  return (
+    <FormControl className="form-control" variant="outlined" size="small">
+      <InputLabel>Tilni tanlang</InputLabel>
+      <Select value={language} onChange={handleChange} label="Tilni tanlang">
+        <MenuItem value="uz">O‘zbekcha</MenuItem>
+        <MenuItem value="ru">Русский</MenuItem>
+      </Select>
+    </FormControl>
+  );
+}
 
 function Header({ search, setSearch }) {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -17,21 +40,25 @@ function Header({ search, setSearch }) {
   const navigate = useNavigate();
   const { cart } = useCart();
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const { t } = useTranslation();
+
   return (
     <div className="header container">
       <img src={logo} alt="Asaxiy Logo" />
       <button className="btn btn3">
-        <IoMenu size={20} color="white" /> Bo'limlar
+        <IoMenu size={20} color="white" /> {t("header.bolimlar")}
       </button>
       <div className="input-header">
         <input
           type="text"
-          placeholder="Qidirish..."
+          placeholder={t("header.input")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button className="btn">Qidirish</button>
+        <button className="btn">{t("header.searchButton")}</button>
       </div>
+
+      <LanguageDropdown />
 
       <div className="header-btns">
         <Link to="/cart">
@@ -49,7 +76,7 @@ function Header({ search, setSearch }) {
           </button>
         </Link>
         <button onClick={() => setIsLoginModalOpen((p) => !p)} className="btn">
-          Kirish
+          {t("header.kirish")}
         </button>
       </div>
 

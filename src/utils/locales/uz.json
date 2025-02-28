@@ -1,0 +1,57 @@
+{
+  "header": {
+    "bolimlar": "Bo'limlar",
+    "input": "Qidiruv...",
+    "searchButton": "Qidirish",
+    "kirish": "kirish"
+  },
+  "footer": {
+    "Malumotlar": "Ma'lumotlar",
+    "KopSoraladiganSavollar": "Ko'p so'raladigan savollar",
+    "Yangiliklar": "Yangiliklar",
+    "Blog": "Blog",
+    "Brend": "Brend",
+    "Karyeramiz": "Karyeramiz",
+    "MuddatliTolov": "Muddatli to'lov",
+    "OmmaviyOferta": "Ommaviy oferta",
+    "BizHaqimizda": "Biz haqimizda",
+    "SaytHaritasi": "Sayt haritasi",
+    "Bizbilanaloqa": "Biz bilan aloqa",
+    "Yetkazibberishvadokonlar": "Yetkazib berish va do'konlar",
+    "Dokonlar": "Do'konlar",
+    "Olibketishpunktlari": "Olib ketish punktlari",
+    "Yetkazibberish": "Yetkazib berish",
+    "Tolovturlari": "To'lov turlari",
+    "Ijtimoiytarmoqlar": "Ijtimoiy tarmoqlar"
+  },
+  "sotibolish": "Xoziroq xarid qilish",
+  "qaytish": "Bosh sahifaga qaytish",
+  "buyCard": {
+    "savatcha": "Savatcha",
+    "savatchabosh": "Savatcha bo'sh",
+    "totalPrice": "Umumiy narx: {{price}} so'm"
+  },
+  "detail": {
+    "orqaga": "Orqaga",
+    "yuklanmoqda": "Yuklanmoqda...",
+    "price": "Narxi",
+    "brend": "Brend",
+    "categori": "Kategoriya",
+    "addSavat": "Savatchaga qo'shish",
+    "Umumiyqiymat": "Umumiy qiymat",
+    "Bolibtolashgaolish": "Bo'lib to'lashga olish"
+  },
+  "order": {
+    "Buyurtmanirasmiylashtirish": "Buyurtmani rasmiylashtirish",
+    "ism": "Ism",
+    "familya": "Familya",
+    "Telefon": "Telefon",
+    "Viloyat": "Viloyat",
+    "Viloyatnitanlang": "Viloyatni tanlang",
+    "Shahar": "Shahar",
+    "Shaharnitanlang": "Shaharni tanlang",
+    "Buyurtmaniyuborish": "Buyurtmani yuborish",
+    "sucsess": "Sizning buyurtmangiz qabul qilindi va tez orada operator siz bilan bog‘lanadi.",
+    "Yopish": "Yopish"
+  }
+}

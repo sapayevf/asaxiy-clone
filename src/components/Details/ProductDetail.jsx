@@ -5,6 +5,7 @@ import "./detail.scss";
 import { Rating } from "@mui/material";
 import ModalWrapper from "../ModalWrapper";
 import { MdClose } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -23,13 +24,15 @@ const ProductDetail = () => {
       .catch((err) => console.error(err));
   }, [id]);
 
-  if (!product) return <p className="loading">Yuklanmoqda...</p>;
+  const { t } = useTranslation();
+  if (!product) return <p className="loading">{t("detail.yuklanmoqda")}</p>;
+
 
   return (
     <div>
       <div>
         <Link to="/" className="back-button">
-          ⬅ Orqaga
+          ⬅ {t("detail.orqaga")}
         </Link>
       </div>
 
@@ -52,8 +55,8 @@ const ProductDetail = () => {
           <h2 className="detail-title">{product.title}</h2>
           <p>
             {" "}
-            <b>Price</b> : {Math.floor((product.price * 12800) / 1000) * 1000}{" "}
-            so'm
+            <b>{t("detail.price")}</b> :{" "}
+            {Math.floor((product.price * 12800) / 1000) * 1000} so'm
           </p>
           <Rating
             size="small"
@@ -66,27 +69,27 @@ const ProductDetail = () => {
           </p>
           <p>
             {" "}
-            <b>Brend</b> : {product.brand}
+            <b>{t("detail.brend")}</b> : {product.brand}
           </p>
           <p>
             {" "}
-            <b>Category</b> : {product.category}
+            <b>{t("detail.categori")}</b> : {product.category}
           </p>
           <p>{product.description}</p>
           <div className="btns">
-            <button className="add-button">Savatchaga qo'shish</button>
+            <button className="add-button">{t("detail.addSavat")}</button>
             <button
               onClick={() => setIsBuyModalOpen(true)}
               className="buy-button"
             >
-              Sotib olish
+              {t("sotibolish")}
             </button>
           </div>
         </div>
 
         <div className="oylik">
           <div className="installment-container">
-            <h2>Bo'lib to'lash</h2>
+            <h2>{t("footer.MuddatliTolov")}</h2>
             <div className="installment-options">
               {[3, 6, 12].map((option) => (
                 <button
@@ -99,7 +102,7 @@ const ProductDetail = () => {
               ))}
             </div>
             <div className="installment-details">
-              <p>Asaxiydan muddatli to'lov</p>
+              <p>{t("footer.MuddatliTolov")}</p>
 
               <div className="eee">
                 <svg
@@ -132,12 +135,14 @@ const ProductDetail = () => {
               </div>
 
               <div className="summa">
-                <p> Umumiy qiymat </p>
+                <p> {t("detail.Umumiyqiymat")} </p>
                 <p>
                   <strong>{totalAmount.toLocaleString()} so'm</strong>
                 </p>
               </div>
-              <button className="order-btn">Bo'lib to'lashga olish</button>
+              <button className="order-btn">
+                {t("detail.Bolibtolashgaolish")}
+              </button>
             </div>
           </div>
         </div>

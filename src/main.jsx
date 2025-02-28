@@ -11,6 +11,7 @@ import { CartProvider } from "./context/CartContext";
 import LikedCards from "./components/LikedCard/LikedCard";
 import BuyCard from "./components/BuyCard/BuyCard";
 import Order from "./components/Order/Order";
+import "./utils/i18n";
 
 function App() {
   const [search, setSearch] = useState("");

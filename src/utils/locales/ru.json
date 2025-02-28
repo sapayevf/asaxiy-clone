@@ -1,0 +1,57 @@
+{
+  "header": {
+    "bolimlar": "Разделы",
+    "input": "Поиск...",
+    "searchButton": "Искать",
+    "kirish": "Войти"
+  },
+  "footer": {
+    "Malumotlar": "Информация",
+    "KopSoraladiganSavollar": "Часто задаваемые вопросы",
+    "Yangiliklar": "Новости",
+    "Blog": "Блог",
+    "Brend": "Бренд",
+    "Karyeramiz": "Карьера",
+    "MuddatliTolov": "Рассрочка",
+    "OmmaviyOferta": "Публичная оферта",
+    "BizHaqimizda": "О нас",
+    "SaytHaritasi": "Карта сайта",
+    "Bizbilanaloqa": "Связаться с нами",
+    "Yetkazibberishvadokonlar": "Доставка и магазины",
+    "Dokonlar": "Магазины",
+    "Olibketishpunktlari": "Пункты самовывоза",
+    "Yetkazibberish": "Доставка",
+    "Tolovturlari": "Методы оплаты",
+    "Ijtimoiytarmoqlar": "Социальные сети"
+  },
+  "sotibolish": "Купить сейчас",
+  "qaytish": "Вернуться на главную страницу",
+  "buyCard": {
+    "savatcha": "Корзина",
+    "savatchabosh": "Корзина пуста",
+    "totalPrice": "Общая стоимость: {{price}} сум"
+  },
+  "detail": {
+    "orqaga": "Назад",
+    "yuklanmoqda": "Загружается...",
+    "price": "Цена",
+    "brend": "Бренд",
+    "categori": "Категория",
+    "addSavat": "Добавить в корзину",
+    "Umumiyqiymat": "Общая стоимость",
+    "Bolibtolashgaolish": "Купить в рассрочку"
+  },
+  "order": {
+    "Buyurtmanirasmiylashtirish": "Оформление заказа",
+    "ism": "Имя",
+    "familya": "Фамилия",
+    "Telefon": "Телефон",
+    "Viloyat": "Регион",
+    "Viloyatnitanlang": "Выберите регион",
+    "Shahar": "Город",
+    "Shaharnitanlang": "Выберите город",
+    "Buyurtmaniyuborish": "Отправить заказ",
+    "sucsess": "Ваш заказ принят, и оператор скоро свяжется с вами.",
+    "Yopish": "Закрыть"
+  }
+}

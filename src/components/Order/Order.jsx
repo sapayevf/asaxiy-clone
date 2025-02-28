@@ -5,7 +5,8 @@ import "react-phone-input-2/lib/style.css";
 import YandexMap from "../YandexMap/YandexMap";
 import { useNavigate } from "react-router-dom";
 import ModalWrapper from "../ModalWrapper";
-import "./Order.scss"
+import "./Order.scss";
+import { useTranslation } from "react-i18next";
 const regions = {
   toshkent: ["Chilonzor", "Yunusobod", "Shayxontohur"],
   samarqand: ["Urgut", "Narpay", "Jomboy"],
@@ -15,6 +16,7 @@ const regions = {
 };
 
 function Order() {
+  const {t} = useTranslation()
   const {
     control,
     handleSubmit,
@@ -61,12 +63,12 @@ function Order() {
   return (
     <div className="order">
       <div className="container">
-        <h2>Buyurtmani rasmiylashtirish</h2>
+        <h2>{t("order.Buyurtmanirasmiylashtirish")}</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="order-content">
           <div className="order-content-form">
             <div className="input-label">
               <label>
-                Ism <span>*</span>
+                {t("order.ism")} <span>*</span>
               </label>
               <input
                 {...register("firstName", {
@@ -80,7 +82,7 @@ function Order() {
             </div>
             <div className="input-label">
               <label>
-                Familiya <span>*</span>
+                {t("order.familya")} <span>*</span>
               </label>
               <input
                 {...register("lastName", {
@@ -95,7 +97,7 @@ function Order() {
             <div className="form-fullname">
               <div className="input-label">
                 <label htmlFor="phone">
-                  Telefon <span>*</span>
+                  {t("order.Telefon")}  <span>*</span>
                 </label>
                 <Controller
                   name="phone"
@@ -121,14 +123,14 @@ function Order() {
             </div>
             <div className="input-label">
               <label>
-                Viloyat <span>*</span>
+                {t("order.Viloyat")}  <span>*</span>
               </label>
               <select
                 {...register("region", { required: "Viloyat tanlang" })}
                 onChange={handleRegionChange}
                 className="input-field"
               >
-                <option value="">Viloyatni tanlang</option>
+                <option value="">{t("order.Viloyatnitanlang")} </option>
                 {Object.keys(regions).map((region) => (
                   <option key={region} value={region}>
                     {region}
@@ -141,13 +143,13 @@ function Order() {
             </div>
             <div className="input-label">
               <label>
-                Shahar <span>*</span>
+                {t("order.Shahar")}  <span>*</span>
               </label>
               <select
                 {...register("district", { required: "Shahar tanlang" })}
                 className="input-field"
               >
-                <option value="">Shaharni tanlang</option>
+                <option value="">{t("order.Shaharnitanlang")}</option>
                 {districts.map((district) => (
                   <option key={district} value={district}>
                     {district}
@@ -160,8 +162,10 @@ function Order() {
             </div>
             <YandexMap />
             <div className="order-button">
-              <button type="submit" onClick={() => setIsModalOpen(true)}>Buyurtmani yuborish</button>
-              <button onClick={() => navigate(-1)}>Ortga</button>
+              <button type="submit" onClick={() => setIsModalOpen(true)}>
+                {t("order.Buyurtmaniyuborish")} 
+              </button>
+              <button onClick={() => navigate(-1)}>{t("orqaga")} Ortga</button>
             </div>
           </div>
         </form>
@@ -173,10 +177,11 @@ function Order() {
           title="Buyurtma qabul qilindi"
         >
           <p>
-            Sizning buyurtmangiz qabul qilindi va tez orada operator siz bilan
-            bog‘lanadi.
+            {t("order.sucsess")} 
           </p>
-          <button onClick={() => setIsModalOpen(false)}>Yopish</button>
+          <button onClick={() => setIsModalOpen(false)}>
+            {t("order.Yopish")} 
+          </button>
         </ModalWrapper>
       )}
     </div>

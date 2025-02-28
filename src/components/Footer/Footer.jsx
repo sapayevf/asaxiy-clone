@@ -1,26 +1,26 @@
 import "./Footer.scss";
 import tolov from "../../assets/banks.png";
 import socials from "../../assets/socials.png";
-
+import { useTranslation } from "react-i18next";
 function Footer() {
+  const { t } = useTranslation();
   return (
     <footer>
       <div className="container">
         <div className="div1">
-          <h3>Ma'lumotlar</h3>
-          <p>Ko'p so'raladigan savollar</p>
-          <p>Yangiliklar</p>
-          <p>Blog</p>
-          <p>Brend</p>
-          <p>Karyeramiz</p>
-          <p>Muddatli to'lov</p>
-          <p>Ommaviy oferta</p>
-          <p>Biz haqimizda</p>
-          <p>Biz haqimizda</p>
-          <p>Sayt haritasi</p>
+          <h3>{t("footer.Malumotlar")}</h3>
+          <p>{t("footer.KopSoraladiganSavollar")}</p>
+          <p>{t("footer.Yangiliklar")}</p>
+          <p>{t("footer.Blog")}</p>
+          <p>{t("footer.Brend")}</p>
+          <p>{t("footer.Karyeramiz")}</p>
+          <p>{t("footer.MuddatliTolov")}</p>
+          <p>{t("footer.OmmaviyOferta")}</p>
+          <p>{t("footer.BizHaqimizda")}</p>
+          <p>{t("footer.SaytHaritasi")}</p>
         </div>
         <div className="div1">
-          <h3>Biz bilan aloqa</h3>
+          <h3>{t("footer.Bizbilanaloqa")}</h3>
           <p>+998 71 200 01 05</p>
           <p>info@asaxiy.uz</p>
           <p>Telegram bot</p>
@@ -31,21 +31,21 @@ function Footer() {
           <p>Asaxiy Plus ofertasi</p>
         </div>
         <div className="div1">
-          <h3>Yetkazib berish va do'konlar</h3>
+          <h3>{t("footer.Yetkazibberishvadokonlar")}</h3>
           <div className="dokon">
-            <p>Do'konlar</p>
+            <p>{t("footer.Dokonlar")}</p>
           </div>
           <div className="dokon">
-            <p>Olib ketish punktlari</p>
+            <p>{t("footer.Olibketishpunktlari")}</p>
           </div>
           <div className="dokon">
-            <p>Yetkazib berish</p>
+            <p>{t("footer.Yetkazibberish")}</p>
           </div>
         </div>
         <div>
-          <h3>To'lov turlari</h3>
+          <h3>{t("footer.Tolovturlari")}</h3>
           <img src={tolov} alt="" />
-          <h3>Ijtimoiy tarmoqlar</h3>
+          <h3>{t("footer.Ijtimoiytarmoqlar")}</h3>
           <img src={socials} alt="" />
         </div>
       </div>

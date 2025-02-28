@@ -3,9 +3,8 @@ import { useCart } from "../../context/CartContext";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 import "./BuyCard.scss";
-import { MdClose } from "react-icons/md";
 import { useState } from "react";
-import ModalWrapper from "../ModalWrapper";
+import { useTranslation } from "react-i18next";
 
 const Cart = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
@@ -17,14 +16,13 @@ const Cart = () => {
     0
   );
 
-  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
-
+  const { t } = useTranslation();
   return (
     <div className="container">
-      <h2>Savatcha</h2>
+      <h2>{t("buyCard.savatcha")}</h2>
       <br />
       {cart.length === 0 ? (
-        <p>Savatcha bo‘sh</p>
+        <p>{t("buyCard.savatchabosh")}</p>
       ) : (
         <>
           <ul>
@@ -68,18 +66,20 @@ const Cart = () => {
           </ul>{" "}
           <br /> <br />
           <h3>
-            Umumiy narx: {Math.floor((totalPrice * 12800) / 1000) * 1000} so'm
+            {t("buyCard.totalPrice", {
+              price: Math.floor((totalPrice * 12800) / 1000) * 1000,
+            })}
           </h3>
           <br />
           <Link to="/order">
-            <button className="home-btn">Sotib olish</button>
+            <button className="home-btn">{t("sotibolish")}</button>
           </Link>
         </>
       )}
       <br />
       <br />
       <button className="home-btn" onClick={() => navigate("/")}>
-        Bosh sahifaga qaytish
+        {t("Orqaga")}
       </button>
     </div>
   );

@@ -82,6 +82,7 @@
 
   .header-btns {
     display: flex;
+    align-items: center;
     gap: 20px;
     .like-counter-btn {
       border: none;
@@ -101,4 +102,8 @@
       }
     }
   }
+}
+
+.form-control {
+  width: 100px;
 }
